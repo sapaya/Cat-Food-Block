@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-	public void LoadNextScene()
+    #region Helper Methods
+    public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ReturnToStart()
@@ -20,4 +26,5 @@ public class SceneLoader : MonoBehaviour {
     {
         Application.Quit();
     }
+    #endregion
 }
