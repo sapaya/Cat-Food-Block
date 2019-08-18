@@ -14,9 +14,23 @@ public class GameStatus : MonoBehaviour
     [SerializeField] int currentScore = 0;
     Score scoreText;
 
+    protected static GameStatus _instance;
     #endregion
 
     #region Main Methods
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            gameObject.SetActive(false); //Destroy is called last, so prevent this from being used
+            Destroy(gameObject);
+        }
+        else {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     private void Start()
     {
         scoreText = FindObjectOfType<Score>();
@@ -30,6 +44,7 @@ public class GameStatus : MonoBehaviour
     #endregion
 
     #region Helper Methods
+
     public void AddToScore()
     {
         currentScore += pointsPerBlock;
@@ -39,6 +54,16 @@ public class GameStatus : MonoBehaviour
     private void UpdateScoreDisplay()
     {
         scoreText.UpdateScore(currentScore);
+    }
+
+    public void ResetGame()
+    {
+        Destroy(gameObject);
+    }
+
+    public void PullScore(Score scoreDisplay)
+    {
+        scoreDisplay.UpdateScore(currentScore);
     }
     #endregion
 }
