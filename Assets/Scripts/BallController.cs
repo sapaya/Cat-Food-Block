@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(AudioSource))]
 public class BallController : MonoBehaviour
 {
     #region Variables
@@ -11,6 +12,10 @@ public class BallController : MonoBehaviour
 
     [Header("Control Values")]
     [SerializeField] Vector2 launchVelocity = new Vector2(2f, 10f);
+    [SerializeField] AudioClip[] audioClips;
+
+    // component refs
+    AudioSource audioChannel;
 
     //state
     Vector2 paddleToBallVector;
@@ -22,7 +27,8 @@ public class BallController : MonoBehaviour
     void Start()
     {
         paddleToBallVector = transform.position - m_MainPaddle.transform.position;
-        
+        audioChannel = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -32,6 +38,15 @@ public class BallController : MonoBehaviour
         {
             AttachBall();
             LaunchOnClick();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (hasLaunched)
+        {
+            AudioClip randomClip = audioClips[Random.Range(0, audioClips.Length)];
+            audioChannel.PlayOneShot(randomClip);
         }
     }
     #endregion
