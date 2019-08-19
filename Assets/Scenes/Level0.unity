@@ -877,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 7119662634072601618, guid: 5d2e3f35257dd7c44b3efda502aeab6d,
         type: 3}
       propertyPath: gameSpeed
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7119662634072601618, guid: 5d2e3f35257dd7c44b3efda502aeab6d,
         type: 3}

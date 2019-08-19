@@ -16,6 +16,7 @@ public class GameStatus : MonoBehaviour
     Score scoreText;
 
     protected static GameStatus _instance;
+    private const float difficultyIncrease = .1f;
     #endregion
 
     #region Main Methods
@@ -70,6 +71,11 @@ public class GameStatus : MonoBehaviour
     public bool isAutoplayEnabled()
     {
         return autoplayEnabled;
+    }
+
+    public void UpDifficulty()
+    {
+        gameSpeed += difficultyIncrease;
     }
     #endregion
 }

@@ -37,7 +37,10 @@ public class LevelControl : MonoBehaviour
     private void EndLevel()
     {
         if (!finalLevel)
+        {
+            FindObjectOfType<GameStatus>().UpDifficulty();
             sceneLoader.LoadNextScene();
+        }
         else
             sceneLoader.LoadScene("Win");
     }
