@@ -39,7 +39,7 @@ public class LevelControl : MonoBehaviour
         if (!finalLevel)
             sceneLoader.LoadNextScene();
         else
-            sceneLoader.ReturnToStart();
+            sceneLoader.LoadScene("Win");
     }
     #endregion
 }

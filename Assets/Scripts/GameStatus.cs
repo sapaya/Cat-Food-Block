@@ -11,6 +11,7 @@ public class GameStatus : MonoBehaviour
     [SerializeField] int pointsPerBlock = 15;
 
     // state variables
+    [SerializeField] bool autoplayEnabled = false;
     [SerializeField] int currentScore = 0;
     Score scoreText;
 
@@ -64,6 +65,11 @@ public class GameStatus : MonoBehaviour
     public void PullScore(Score scoreDisplay)
     {
         scoreDisplay.UpdateScore(currentScore);
+    }
+
+    public bool isAutoplayEnabled()
+    {
+        return autoplayEnabled;
     }
     #endregion
 }
