@@ -16,7 +16,7 @@ public class GameStatus : MonoBehaviour
     Score scoreText;
 
     protected static GameStatus _instance;
-    private const float difficultyIncrease = .1f;
+    private const float difficultyIncrease = .02f;
     #endregion
 
     #region Main Methods

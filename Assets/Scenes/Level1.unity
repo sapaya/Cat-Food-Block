@@ -2603,13 +2603,13 @@ Transform:
   - {fileID: 376064230}
   - {fileID: 84334567}
   - {fileID: 1077865831}
-  - {fileID: 92178618}
-  - {fileID: 671882382}
-  - {fileID: 989475421}
-  - {fileID: 340915546}
   - {fileID: 604147183}
-  - {fileID: 792090200}
+  - {fileID: 989475421}
+  - {fileID: 671882382}
+  - {fileID: 340915546}
+  - {fileID: 92178618}
   - {fileID: 1770578338}
+  - {fileID: 792090200}
   - {fileID: 1139434146}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -3596,6 +3596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119662634072601618, guid: 5d2e3f35257dd7c44b3efda502aeab6d,
+        type: 3}
+      propertyPath: gameSpeed
+      value: 0.93
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2e3f35257dd7c44b3efda502aeab6d, type: 3}
